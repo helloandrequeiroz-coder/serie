@@ -803,13 +803,14 @@ V.profile = (st) => header({title:'Perfil', sub: user && user.email}) +
   '<div class="card"><div class="h2">Convidar amigos</div><p style="margin:0 0 12px;font-weight:600">Manda o link do app. Cada um cria a própria conta e os dados ficam separados.</p><button class="btn" data-act="copyLink">'+I.link+'Copiar link do app</button></div>'+
   '<button class="btn out" data-act="logout">Sair da conta</button></div>' + nav('home');
 async function authSubmit(){
-  const st = cur(); const email = $('#a-email').value.trim(); st.email = email; st.err = st.msg = ''; st.busy = true; render();
+  const st = cur(); const email = $('#a-email').value.trim(); const passEl = $('#a-pass'); const pass = passEl ? passEl.value : '';
+  st.email = email; st.err = st.msg = ''; st.busy = true; keepForm(()=>render());
   try{
     if(st.mode === 'forgot'){
       const { error } = await sb.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
       if(error) throw error; st.msg = 'Se esse e-mail tiver conta, o link chega em instantes.';
     } else {
-      const pass = $('#a-pass').value;
+      if(pass.length < 6) throw new Error('A senha precisa ter pelo menos 6 caracteres.');
       const r = st.mode === 'up' ? await sb.auth.signUp({ email, password: pass, options:{ emailRedirectTo: location.origin + location.pathname } }) : await sb.auth.signInWithPassword({ email, password: pass });
       if(r.error) throw r.error;
       if(!r.data.session){ st.msg = 'Conta criada! Confirme pelo link que enviamos pro seu e-mail e depois entre.'; st.mode='in'; }
@@ -817,9 +818,9 @@ async function authSubmit(){
     }
   }catch(e){
     const m = String(e.message||e);
-    st.err = /Invalid login/i.test(m) ? 'E-mail ou senha incorretos.' : /already registered/i.test(m) ? 'Esse e-mail já tem conta. Use Entrar.' : /Email not confirmed/i.test(m) ? 'Confirme seu e-mail pelo link que enviamos.' : /Failed to fetch|network/i.test(m) ? 'Sem internet.' : m;
+    st.err = /Invalid login/i.test(m) ? 'E-mail ou senha incorretos.' : /already registered/i.test(m) ? 'Esse e-mail já tem conta. Use Entrar.' : /Email not confirmed/i.test(m) ? 'Confirme seu e-mail pelo link que enviamos.' : /Failed to fetch|network/i.test(m) ? 'Sem internet.' : /valid password|Password should/i.test(m) ? 'A senha precisa ter pelo menos 6 caracteres.' : /rate limit|too many/i.test(m) ? 'Muitas tentativas. Espere um minuto e tente de novo.' : m;
   }
-  st.busy = false; render();
+  st.busy = false; keepForm(()=>render());
 }
 
 // ---------- render ----------
