@@ -1,5 +1,5 @@
 // Série — service worker: app abre offline; imagens dos exercícios ficam em cache depois da 1ª vez.
-const VERSION = 'serie-v3';
+const VERSION = 'vm-v5';
 const SHELL = ['./', './index.html', './library.json', './manifest.webmanifest', './icons/icon-192.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL))); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== VERSION && !k.startsWith('serie-img')).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
