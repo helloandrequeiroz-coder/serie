@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#F3E6E2">
-<title>Série — Treino</title>
+<title>#VemMonstro</title>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <link rel="icon" href="icons/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Série">
+<meta name="apple-mobile-web-app-title" content="VemMonstro">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@ input,select,textarea{font:inherit;color:inherit}
 .wrap{padding:0 16px}
 /* app bar */
 .top{margin:0 16px 6px;display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--g);color:#fff;border:var(--b);border-radius:16px;box-shadow:var(--sh2);padding:10px 12px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-stretch:78%;font-size:25px;text-transform:uppercase;letter-spacing:.01em}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-stretch:76%;font-size:23px;white-space:nowrap;text-transform:uppercase;letter-spacing:.01em}
 .brand i{display:grid;place-items:center;width:40px;height:40px;border:var(--b);border-radius:11px;background:#fff;color:var(--ink);box-shadow:3px 3px 0 var(--ink);transform:rotate(-4deg)}
 .brand svg{width:26px;height:26px}
 .back{display:inline-flex;align-items:center;gap:4px;font-weight:800;font-stretch:85%;font-size:13px;text-transform:uppercase;padding:8px 11px 8px 7px;border:var(--b);border-radius:11px;background:var(--card);color:var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
@@ -227,10 +227,40 @@ body.alt .anim img.f0{opacity:0}
 .seg2 button.on{background:var(--ink);color:#fff}
 .plan.sel{outline:3px solid var(--g);outline-offset:2px}
 .back svg{width:16px;height:16px}
+
+.preview{border:var(--b);border-radius:14px;background:var(--paper);padding:6px 12px;margin:-4px 0 14px;box-shadow:3px 3px 0 var(--ink)}
+.pvday{display:flex;gap:12px;align-items:center;padding:9px 0;border-top:2px dashed #E3CFC9}
+.pvday:first-child{border-top:0}
+.pvday>b{width:44px;flex:none;text-align:center;font-family:var(--mono);font-weight:500;font-size:12px;text-transform:uppercase;background:var(--ink);color:#fff;border-radius:8px;padding:5px 0}
+.pvg{font-weight:800;font-stretch:85%;text-transform:uppercase;font-size:15px;line-height:1.1}
+.pvm{font-family:var(--mono);font-size:11.5px;color:var(--soft);margin-top:2px}
+.pvnote{font-family:var(--mono);font-size:11.5px;padding:8px 0;color:var(--g2)}
+.guide ul{margin:12px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-weight:600;font-size:14px}
+.guide summary{cursor:pointer;list-style:none}
+.guide summary::after{content:' +';color:var(--g)}
+.guide[open] summary::after{content:' –'}
+
+.splash{position:fixed;inset:0;z-index:100;background:var(--g);display:grid;place-items:center;overflow:hidden}
+.splash::before,.splash::after{content:"";position:absolute;width:140vmax;height:16vmax;background:var(--ink);transform:rotate(-12deg);top:8%;left:-20%;opacity:.12}
+.splash::after{top:auto;bottom:6%;transform:rotate(-12deg)}
+.splash-in{display:flex;flex-direction:column;align-items:center;gap:18px;position:relative}
+.sp-logo{width:96px;height:96px;border:4px solid var(--ink);border-radius:24px;background:#fff;color:var(--ink);display:grid;place-items:center;box-shadow:7px 7px 0 var(--ink);animation:spPop .6s cubic-bezier(.2,.9,.3,1.5) both, spLift 1.1s .6s ease-in-out infinite}
+.sp-logo svg{width:60px;height:60px}
+.sp-t{display:flex;flex-direction:column;align-items:center;font-family:var(--display);font-weight:800;font-stretch:72%;text-transform:uppercase;line-height:.82;font-size:clamp(48px,16vw,96px);color:#fff;-webkit-text-stroke:3px var(--ink);text-shadow:6px 6px 0 var(--ink)}
+.sp-t span{display:block;animation:spIn .5s cubic-bezier(.2,.9,.3,1.4) both}
+.sp-t span:first-child{animation-delay:.15s;color:var(--ink);-webkit-text-stroke:0;text-shadow:none;font-size:.55em;transform:rotate(-4deg)}
+.sp-t span:last-child{animation-delay:.3s}
+.sp-bar{width:180px;height:16px;border:3px solid var(--ink);border-radius:9px;background:#fff;overflow:hidden;box-shadow:4px 4px 0 var(--ink)}
+.sp-bar i{display:block;height:100%;width:40%;background:var(--ink);animation:spLoad 1s ease-in-out infinite}
+.sp-tag{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:var(--ink)}
+@keyframes spPop{from{transform:scale(.3) rotate(-30deg);opacity:0}to{transform:scale(1) rotate(-6deg);opacity:1}}
+@keyframes spLift{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(4deg) translateY(-10px)}}
+@keyframes spIn{from{transform:translateY(40px) scale(.8);opacity:0}}
+@keyframes spLoad{0%{transform:translateX(-100%)}100%{transform:translateX(260%)}}
 </style>
 </head>
 <body>
-<div id="app"></div>
+<div id="app"><div class="splash"><div class="splash-in"><div class="sp-logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="9" y="4" width="14" height="24" rx="3"/><path d="M9 11h14M9 21h14M5 13v6M27 13v6M3 15v2M29 15v2"/></svg></div><div class="sp-t"><span>#Vem</span><span>Monstro</span></div><div class="sp-bar"><i></i></div><div class="sp-tag">bora treinar</div></div></div></div>
 <div id="layer"></div>
 <script>
 (() => {
@@ -292,7 +322,9 @@ function backTo(){ if(S.stack.length>1) S.stack.pop(); render(); window.scrollTo
 function home(){ S.stack=[{v:'home'}]; render(); window.scrollTo(0,0); }
 
 // ---------- persistence (Supabase, cache local para offline) ----------
-const APP_VERSION = 'v3';
+const T0 = Date.now();
+const splashWait = () => new Promise(r => setTimeout(r, Math.max(0, 1500 - (Date.now() - T0))));
+const APP_VERSION = 'v4';
 const SB_URL = 'https://kazfepwgtaxmbyqjxzqi.supabase.co';
 const SB_KEY = 'sb_publishable_GViIpkCEwRIGwy3dE61XsA_PV7nDEQY';
 const TEMPLATES = [{"id": "p-hipertrofia", "name": "Hipertrofia", "goal": "Hipertrofia", "level": "Intermediário", "start": "2026-08-12", "end": "2026-09-12", "days": [{"id": "h-seg", "title": "Segunda", "subtitle": "Costas e ombro", "blocks": [{"id": "b2", "items": [{"id": "e1", "exId": "V-Bar_Pulldown", "name": "V-Bar Lat Pulldown", "sets": "4", "reps": "10", "load": "40kg", "rest": "60", "notes": "Fazer 1x30 com 30kg pra aquecer"}]}, {"id": "b5", "items": [{"id": "e3", "exId": "Rope_Straight-Arm_Pulldown", "name": "Rope Cable Pulldown", "sets": "3", "reps": "10", "load": "30kg", "rest": "60", "notes": ""}, {"id": "e4", "exId": "Face_Pull", "name": "Face Pull", "sets": "3", "reps": "12", "load": "20kg", "rest": "60", "notes": ""}]}, {"id": "b7", "items": [{"id": "e6", "exId": "Reverse_Grip_Bent-Over_Rows", "name": "Reverse Grip Bent Over Barbell Row", "sets": "3", "reps": "10", "load": "10kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b9", "items": [{"id": "e8", "exId": "Dumbbell_Shoulder_Press", "name": "Seated Neutral Grip Dumbbell Shoulder Press", "sets": "4", "reps": "10", "load": "8kg", "rest": "60", "notes": ""}]}, {"id": "b11", "items": [{"id": "e10", "exId": "Seated_Side_Lateral_Raise", "name": "Seated Dumbbell Side Lateral Raise", "sets": "3", "reps": "10", "load": "6kg", "rest": "60", "notes": ""}]}, {"id": "b13", "items": [{"id": "e12", "exId": "Upright_Cable_Row", "name": "Low Cable High Row with Barbell", "sets": "3", "reps": "10", "load": "", "rest": "60", "notes": "Drop set, fazer 3 séries", "scheme": [{"reps": "10", "load": "35kg"}, {"reps": "10", "load": "30kg"}, {"reps": "10", "load": "25kg"}]}]}, {"id": "b15", "items": [{"id": "e14", "exId": "Sit-Up", "name": "Rower Sit-up", "sets": "4", "reps": "20", "load": "0kg", "rest": "60", "notes": ""}]}]}, {"id": "h-ter", "title": "Terça", "subtitle": "Bíceps e tríceps", "blocks": [{"id": "b18", "items": [{"id": "e16", "exId": "Alternate_Hammer_Curl", "name": "Alternating Isometric Dumbbell Hammer Curl", "sets": "4", "reps": "10", "load": "9kg", "rest": "60", "notes": ""}, {"id": "e17", "exId": "Standing_One-Arm_Dumbbell_Triceps_Extension", "name": "One Arm Overhead Dumbbell Triceps Extension", "sets": "4", "reps": "12", "load": "6kg", "rest": "60", "notes": ""}]}, {"id": "b21", "items": [{"id": "e19", "exId": "Cable_Hammer_Curls_-_Rope_Attachment", "name": "Low Cable Bicep Curl with Rope", "sets": "3", "reps": "10", "load": "20kg", "rest": "60", "notes": ""}, {"id": "e20", "exId": "Triceps_Pushdown", "name": "Triceps Pushdown", "sets": "3", "reps": "10", "load": "", "rest": "60", "notes": "Drop set 3x", "scheme": [{"reps": "10", "load": "35kg"}, {"reps": "10", "load": "30kg"}, {"reps": "10", "load": "20kg"}]}]}, {"id": "b24", "items": [{"id": "e22", "exId": "Reverse_Cable_Curl", "name": "Low Cable Reverse Curl", "sets": "3", "reps": "12", "load": "10kg", "rest": "60", "notes": ""}, {"id": "e23", "exId": "Reverse_Grip_Triceps_Pushdown", "name": "Reverse Grip Triceps Pushdown", "sets": "3", "reps": "10", "load": "30kg", "rest": "60", "notes": ""}]}, {"id": "b26", "items": [{"id": "e25", "exId": "Cable_Rope_Overhead_Triceps_Extension", "name": "Cable Overhead Triceps Extension", "sets": "3", "reps": "10", "load": "20kg", "rest": "60", "notes": ""}]}, {"id": "b28", "items": [{"id": "e27", "exId": "Barbell_Curl", "name": "Barbell Biceps Curl", "sets": "4", "reps": "10", "load": "7kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b30", "items": [{"id": "e29", "exId": "Crunches", "name": "Floor Crunch", "sets": "5", "reps": "20", "load": "0kg", "rest": "60", "notes": ""}]}]}, {"id": "h-qua", "title": "Quarta", "subtitle": "Inferior completo", "blocks": [{"id": "b32", "items": [{"id": "e31", "exId": "Hack_Squat", "name": "Hack Squat", "sets": "4", "reps": "10", "load": "", "rest": "60", "notes": "", "scheme": [{"reps": "15", "load": "15kg cada lado"}, {"reps": "12", "load": "20kg cada lado"}, {"reps": "10", "load": "25kg cada lado"}, {"reps": "8", "load": "30kg cada lado"}]}]}, {"id": "b35", "items": [{"id": "e33", "exId": "Leg_Press", "name": "Feet Wide Leg Press", "sets": "3", "reps": "12", "load": "150kg", "rest": "60", "notes": ""}, {"id": "e34", "exId": "Calf_Press_On_The_Leg_Press_Machine", "name": "Calf on the Leg Press", "sets": "3", "reps": "15", "load": "150kg", "rest": "60", "notes": ""}]}, {"id": "b37", "items": [{"id": "e36", "exId": "Leg_Extensions", "name": "Leg Extension", "sets": "4", "reps": "10", "load": "", "rest": "90", "notes": "Drop set, fazer 4 séries, descansar 90s", "scheme": [{"reps": "15", "load": "30kg"}, {"reps": "12", "load": "40kg"}, {"reps": "10", "load": "50kg"}, {"reps": "8", "load": "60kg"}]}]}, {"id": "b39", "items": [{"id": "e38", "exId": "Thigh_Abductor", "name": "Thigh Abductor", "sets": "4", "reps": "15", "load": "70kg", "rest": "50", "notes": ""}]}, {"id": "b41", "items": [{"id": "e40", "exId": "Seated_Leg_Curl", "name": "Seated Hamstring Curl", "sets": "3", "reps": "falha", "load": "50kg", "rest": "60", "notes": "Até a falha"}]}]}, {"id": "h-qui", "title": "Quinta", "subtitle": "Peito e ombro", "blocks": [{"id": "b43", "items": [{"id": "e42", "exId": "Barbell_Incline_Bench_Press_-_Medium_Grip", "name": "Incline Bench Press", "sets": "3", "reps": "10", "load": "7,5kg", "rest": "60", "notes": "Fazer 1x20 com 10kg para aquecer"}]}, {"id": "b45", "items": [{"id": "e44", "exId": "Incline_Dumbbell_Flyes", "name": "Incline Fly", "sets": "3", "reps": "12", "load": "8kg", "rest": "60", "notes": ""}]}, {"id": "b47", "items": [{"id": "e46", "exId": "Barbell_Bench_Press_-_Medium_Grip", "name": "Bench Press", "sets": "4", "reps": "10", "load": "18kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b49", "items": [{"id": "e48", "exId": "Cable_Crossover", "name": "High Cable Crossover", "sets": "3", "reps": "10", "load": "20kg", "rest": "60", "notes": ""}]}, {"id": "b51", "items": [{"id": "e50", "exId": "Side_Lateral_Raise", "name": "Dumbbell Side Lateral Raise", "sets": "4", "reps": "12", "load": "8kg", "rest": "60", "notes": ""}]}, {"id": "b53", "items": [{"id": "e52", "exId": "Arnold_Dumbbell_Press", "name": "Seated Arnold Press", "sets": "4", "reps": "10", "load": "10kg", "rest": "60", "notes": ""}]}, {"id": "b55", "items": [{"id": "e54", "exId": "Front_Raise_And_Pullover", "name": "Barbell Reverse Front Raise", "sets": "3", "reps": "10", "load": "5kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b57", "items": [{"id": "e56", "exId": "Ab_Roller", "name": "Ab Wheel Rollout", "sets": "4", "reps": "15", "load": "0kg", "rest": "60", "notes": ""}]}]}, {"id": "h-sex", "title": "Sexta", "subtitle": "Bíceps e tríceps", "blocks": [{"id": "b60", "items": [{"id": "e58", "exId": "Barbell_Curl", "name": "EZ-Bar Biceps Curl 21s", "sets": "4", "reps": "21", "load": "7kg cada lado", "rest": "60", "notes": "21s: 7 reps embaixo, 7 em cima, 7 completas"}, {"id": "e59", "exId": "EZ-Bar_Skullcrusher", "name": "EZ-Bar Skull Crusher", "sets": "4", "reps": "12", "load": "7kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b63", "items": [{"id": "e61", "exId": "Cable_Rope_Overhead_Triceps_Extension", "name": "Cable Rope Overhead Triceps Extension", "sets": "3", "reps": "10", "load": "45kg", "rest": "60", "notes": ""}, {"id": "e62", "exId": "Cable_Hammer_Curls_-_Rope_Attachment", "name": "Low Cable Bicep Curl with Rope", "sets": "3", "reps": "10", "load": "", "rest": "60", "notes": "Drop set 3x", "scheme": [{"reps": "10", "load": "40kg"}, {"reps": "10", "load": "30kg"}, {"reps": "10", "load": "20kg"}]}]}, {"id": "b66", "items": [{"id": "e64", "exId": "Dumbbell_Bicep_Curl", "name": "Isometric Dumbbell Biceps Curl", "sets": "3", "reps": "12", "load": "10kg", "rest": "60", "notes": ""}, {"id": "e65", "exId": "Triceps_Pushdown_-_Rope_Attachment", "name": "Triceps Pushdown with Rope", "sets": "3", "reps": "10", "load": "35kg", "rest": "60", "notes": ""}]}, {"id": "b68", "items": [{"id": "e67", "exId": "Reverse_Grip_Triceps_Pushdown", "name": "Reverse Grip Triceps Pushdown", "sets": "3", "reps": "10", "load": "50kg", "rest": "60", "notes": ""}]}, {"id": "b70", "items": [{"id": "e69", "exId": "Preacher_Curl", "name": "EZ-Bar Scott Curl", "sets": "4", "reps": "10", "load": "12kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b72", "items": [{"id": "e71", "exId": "Air_Bike", "name": "Bicycle Crunch", "sets": "5", "reps": "15", "load": "0kg", "rest": "60", "notes": ""}]}]}]}, {"id": "p-fullbody", "name": "Full body", "goal": "Hipertrofia", "level": "Iniciante", "start": "2026-08-16", "end": "2026-09-18", "days": [{"id": "f-1", "title": "Treino 1", "subtitle": "Segunda-feira", "blocks": [{"id": "b74", "items": [{"id": "e73", "exId": "Hammer_Curls", "name": "Dumbbell Hammer Curl", "sets": "3", "reps": "10", "load": "8kg", "rest": "60", "notes": "Mesma carga e reps em todas as séries"}]}, {"id": "b76", "items": [{"id": "e75", "exId": "Close-Grip_Front_Lat_Pulldown", "name": "Close-Grip Front Lat Pulldown", "sets": "3", "reps": "10", "load": "40kg", "rest": "60", "notes": ""}]}, {"id": "b78", "items": [{"id": "e77", "exId": "Barbell_Bench_Press_-_Medium_Grip", "name": "Bench Press", "sets": "3", "reps": "12", "load": "12kg cada lado", "rest": "60", "notes": "Mesma carga e reps em todas as séries"}]}, {"id": "b80", "items": [{"id": "e79", "exId": "Preacher_Curl", "name": "EZ-Bar Scott Curl", "sets": "3", "reps": "10", "load": "8kg cada lado", "rest": "60", "notes": "Mesma carga e reps em todas as séries"}]}, {"id": "b82", "items": [{"id": "e81", "exId": "Hack_Squat", "name": "Hack Squat", "sets": "4", "reps": "12", "load": "60kg cada lado", "rest": "60", "notes": ""}]}]}, {"id": "f-2", "title": "Treino 2", "subtitle": "Quarta-feira", "blocks": []}]}];
@@ -345,6 +377,7 @@ async function loadAll(){
     S.profile = ls.get('serie.profile'); S.plans = ls.get('serie.plans') || []; S.history = ls.get('serie.history') || [];
     S.syncNote = 'Sem internet — usando os dados salvos neste celular';
   }
+  await splashWait();
   S.loaded = true;
   if(!S.profile) S.stack = [{v:'onboard'}];
   else if(['login','onboard','boot'].includes(cur().v)) S.stack = [{v:'home'}];
@@ -364,7 +397,7 @@ async function initData(){
   const { data } = await sb.auth.getSession();
   if(!data.session){
     if(ls.get('serie.profile') && !navigator.onLine){ S.profile = ls.get('serie.profile'); S.plans = ls.get('serie.plans')||[]; S.history = ls.get('serie.history')||[]; S.loaded=true; S.stack=[{v:'home'}]; render(); return; }
-    S.stack = [{v:'login'}]; render(); return;
+    await splashWait(); S.stack = [{v:'login'}]; render(); return;
   }
   user = data.session.user;
   if(cur().v !== 'newpass') await loadAll();
@@ -419,7 +452,7 @@ const findDay = (p, id) => p && p.days.find(d=>d.id===id);
 
 // ---------- chrome ----------
 function header({title, sub, backBtn=true, hello=null, backAct='back', backLabel='Voltar', backIcon=null}={}){
-  return '<header class="top"><div class="brand"><i>'+I.logo+'</i><span>Série</span></div>'+
+  return '<header class="top"><div class="brand"><i>'+I.logo+'</i><span>#VemMonstro</span></div>'+
     (backBtn ? '<button class="back" data-act="'+backAct+'">'+(backIcon||I.back)+esc(backLabel)+'</button>' : '')+'</header>'+
     '<div class="ph">'+(hello ? '<h1 class="big">'+esc(hello)+'</h1>' : '')+(title ? '<h1 class="big">'+esc(title)+'</h1>' : '')+(sub ? '<p class="lead">'+esc(sub)+'</p>' : '')+'</div>';
 }
@@ -464,15 +497,16 @@ V.plans = () => header({title:'Treinos'}) +
    S.plans.map(p => '<button class="plan" data-act="go" data-v="plan" data-plan="'+p.id+'" style="border-left:12px solid '+pstyle(p).c+'">'+pav(p)+'<div><h3>'+esc(p.name)+'</h3>'+
      (p.start||p.end ? '<div class="meta">'+I.cal+fmtDate(p.start)+' – '+fmtDate(p.end)+'</div>' : '')+
      '<div class="meta">'+esc([p.goal,p.level].filter(Boolean).join(' | '))+'</div></div><span class="chev">'+I.chev+'</span></button>').join('')) +
-  '<button class="btn ghost" data-act="newPlan">'+I.plus+'Novo plano</button></div></div>' + nav('plans');
+  '<button class="btn pri" data-act="go" data-v="gen" style="margin-bottom:12px">'+I.bolt+'Gerar treino recomendado</button><button class="btn ghost" data-act="newPlan">'+I.plus+'Montar do zero</button></div></div>' + nav('plans');
 
 V.plan = ({plan}) => {
   const p = findPlan(plan); if(!p) return V.plans();
   return header({title:p.name, sub:[p.goal,p.level].filter(Boolean).join(' · ') + (p.start? ' · '+fmtDate(p.start)+' – '+fmtDate(p.end):'')}) +
   '<div class="wrap">' +
   '<div class="toolbar" style="justify-content:space-between;align-items:center">'+pav(p,'av sm')+'<button data-act="editPlan" data-plan="'+p.id+'">'+I.edit+'Editar plano</button></div>' +
+  (p.guide && p.guide.length ? '<details class="card guide"'+(dayStats(p.id,(p.days[0]||{}).id).n?'':' open')+'><summary class="h2" style="margin:0">Como usar este treino</summary><ul>'+p.guide.map(g=>'<li>'+esc(g)+'</li>').join('')+'</ul></details>' : '') +
   p.days.map(d => { const st = dayStats(p.id, d.id); const nEx = d.blocks.reduce((a,b)=>a+b.items.length,0);
-    return '<div class="card dayc" style="border-top:12px solid '+pstyle(p).c+'"><h3>'+esc(d.title)+'</h3><div class="s">'+esc(d.subtitle||'')+(nEx? ' · '+nEx+' exercícios':'')+'</div>'+
+    return '<div class="card dayc" style="border-top:12px solid '+pstyle(p).c+'"><h3>'+esc(d.title)+'</h3><div class="s">'+esc(d.subtitle||'')+(nEx? ' · '+nEx+' exercícios · ~'+dayMinutes(d)+' min':'')+'</div>'+
       (st.n ? '<div class="stat">Feito '+st.n+(st.n>1?' vezes':' vez')+', último em '+fmtDate(st.last)+'</div>' : '<div class="stat no">Você ainda não fez este treino</div>')+
       '<div class="row2"><button class="btn out" data-act="go" data-v="progress" data-plan="'+p.id+'" data-day="'+d.id+'">'+I.prog+'Progressão</button><button class="btn out" data-act="editDay" data-plan="'+p.id+'" data-day="'+d.id+'">'+I.edit+'Editar</button></div>'+
       '<button class="btn pri" style="background:'+pstyle(p).c+'" data-act="go" data-v="day" data-plan="'+p.id+'" data-day="'+d.id+'">Abrir treino</button></div>'; }).join('') +
@@ -756,12 +790,106 @@ function fullPlay(on){ clearInterval(fullT); fullT=null; const b=$('#full [data-
 function closeFull(){ clearInterval(fullT); fullT=null; const f=$('#full'); f&&f.remove(); }
 
 
+
+// ---------- gerador de treino recomendado ----------
+// [nome PT, id da biblioteca, c=composto/i=isolado, nível: a=ambos, b=só iniciante, m=só intermediário]
+const EXDB = {
+  peito:   [['Supino máquina','Machine_Bench_Press','c','b'],['Supino reto com barra','Barbell_Bench_Press_-_Medium_Grip','c','m'],['Supino inclinado com halteres','Incline_Dumbbell_Press','c','a'],['Supino reto com halteres','Dumbbell_Bench_Press','c','a'],['Crucifixo máquina (peck deck)','Butterfly','i','a'],['Crossover na polia','Cable_Crossover','i','a'],['Crucifixo inclinado','Incline_Dumbbell_Flyes','i','m'],['Flexão de braço','Pushups','c','a']],
+  costas:  [['Puxada frontal','Wide-Grip_Lat_Pulldown','c','a'],['Remada baixa na polia','Seated_Cable_Rows','c','a'],['Remada máquina','Leverage_High_Row','c','b'],['Remada curvada com barra','Bent_Over_Barbell_Row','c','m'],['Remada unilateral com halter','One-Arm_Dumbbell_Row','c','a'],['Puxada triângulo','Close-Grip_Front_Lat_Pulldown','c','a'],['Pulldown braço estendido','Straight-Arm_Pulldown','i','a'],['Barra fixa','Pullups','c','m']],
+  ombros:  [['Desenvolvimento máquina','Leverage_Shoulder_Press','c','b'],['Desenvolvimento com halteres','Dumbbell_Shoulder_Press','c','a'],['Elevação lateral','Side_Lateral_Raise','i','a'],['Crucifixo inverso máquina','Reverse_Machine_Flyes','i','a'],['Face pull','Face_Pull','i','a'],['Elevação frontal','Front_Dumbbell_Raise','i','a'],['Remada alta na polia','Upright_Cable_Row','i','m']],
+  biceps:  [['Rosca direta com barra','Barbell_Curl','i','a'],['Rosca alternada','Dumbbell_Alternate_Bicep_Curl','i','a'],['Rosca martelo','Hammer_Curls','i','a'],['Rosca Scott','Preacher_Curl','i','a'],['Rosca na polia','Standing_Biceps_Cable_Curl','i','a']],
+  triceps: [['Tríceps pulley','Triceps_Pushdown','i','a'],['Tríceps corda','Triceps_Pushdown_-_Rope_Attachment','i','a'],['Tríceps testa','EZ-Bar_Skullcrusher','i','m'],['Tríceps francês na polia','Cable_Rope_Overhead_Triceps_Extension','i','a'],['Mergulho no banco','Bench_Dips','c','a']],
+  quad:    [['Leg press 45°','Leg_Press','c','a'],['Agachamento goblet','Goblet_Squat','c','b'],['Agachamento livre','Barbell_Squat','c','m'],['Cadeira extensora','Leg_Extensions','i','a'],['Afundo com halteres','Dumbbell_Lunges','c','a'],['Agachamento hack','Hack_Squat','c','m'],['Agachamento no Smith','Smith_Machine_Squat','c','b']],
+  post:    [['Stiff com halteres','Stiff-Legged_Dumbbell_Deadlift','c','a'],['Mesa flexora','Lying_Leg_Curls','i','a'],['Cadeira flexora','Seated_Leg_Curl','i','a'],['Levantamento terra romeno','Romanian_Deadlift','c','m']],
+  gluteo:  [['Elevação pélvica','Barbell_Hip_Thrust','c','a'],['Cadeira abdutora','Thigh_Abductor','i','a'],['Glúteo no cabo/4 apoios','Glute_Kickback','i','a'],['Ponte de glúteo','Barbell_Glute_Bridge','c','b']],
+  pant:    [['Panturrilha no leg press','Calf_Press_On_The_Leg_Press_Machine','i','a'],['Panturrilha em pé','Standing_Calf_Raises','i','a'],['Panturrilha sentado','Seated_Calf_Raise','i','a']],
+  abd:     [['Abdominal supra','Crunches','i','a'],['Prancha','Plank','i','a'],['Elevação de pernas','Flat_Bench_Lying_Leg_Raise','i','a'],['Abdominal na polia','Cable_Crunch','i','m'],['Abdominal bicicleta','Air_Bike','i','a'],['Elevação de pernas na barra','Hanging_Leg_Raise','i','m']],
+};
+const GNAME = {peito:'Peito',costas:'Costas',ombros:'Ombros',biceps:'Bíceps',triceps:'Tríceps',quad:'Quadríceps',post:'Posterior',gluteo:'Glúteos',pant:'Panturrilha',abd:'Abdômen'};
+const WEEK = {2:['Segunda','Quinta'],3:['Segunda','Quarta','Sexta'],4:['Segunda','Terça','Quinta','Sexta'],5:['Segunda','Terça','Quarta','Quinta','Sexta'],6:['Segunda','Terça','Quarta','Quinta','Sexta','Sábado']};
+const PUSH=[['peito',3],['ombros',2],['triceps',2]], PULL=[['costas',4],['biceps',2],['abd',1]], LEGS=[['quad',3],['post',2],['pant',1],['abd',1]];
+const SPLITS = {
+  3:[PUSH,PULL,LEGS],
+  4:[[['peito',4],['triceps',3]],[['costas',4],['biceps',3]],[['quad',3],['post',2],['gluteo',1],['pant',1]],[['ombros',4],['abd',2]]],
+  5:[[['peito',4],['triceps',3]],[['costas',4],['biceps',3]],[['quad',4],['pant',2]],[['ombros',4],['abd',2]],[['post',3],['gluteo',3]]],
+  6:[PUSH,PULL,LEGS,PUSH,PULL,LEGS],
+};
+const FULL = [['quad',1],['peito',1],['costas',1],['post',1],['ombros',1],['bracos',1],['abd',1]];
+const GOALCFG = {
+  'Hipertrofia':     { c:{b:[3,'10-12',75],m:[4,'8-10',90]}, i:{b:[3,'12',60],m:[3,'10-12',60]}, color:'#EE2B1B', icon:'flame' },
+  'Emagrecer':       { c:{b:[3,'12',60],m:[3,'12',60]}, i:{b:[3,'15',45],m:[3,'15',45]}, cardio:true, color:'#FF8A00', icon:'bolt' },
+  'Condicionamento': { c:{b:[3,'12-15',45],m:[3,'15',40]}, i:{b:[3,'15',30],m:[3,'15-20',30]}, pairs:true, color:'#10B5A5', icon:'target' },
+  'Força':           { c:{b:[4,'6-8',120],m:[5,'5',150]}, i:{b:[3,'8-10',75],m:[3,'8-10',75]}, color:'#1A0907', icon:'dumb' },
+};
+const GUIDE = {
+  'Hipertrofia': ['Escolha uma carga que deixe 1–2 repetições "na reserva" na última série.','Quando fizer o topo das repetições em todas as séries, suba a carga (2–5%) no treino seguinte.','Controle a descida (2–3 s). Técnica antes de carga.'],
+  'Emagrecer': ['O que mais emagrece é a alimentação; o treino preserva músculo enquanto você perde gordura.','Descansos curtos e o cardio no final mantêm o gasto alto.','Tente aumentar um pouco carga ou reps a cada semana.'],
+  'Condicionamento': ['Os exercícios vêm em pares (combinados): faça um, depois o outro, e só então descanse.','Ritmo constante, respiração controlada. Pode sentir o coração acelerar — é o objetivo.','Quando ficar fácil, reduza o descanso antes de subir a carga.'],
+  'Força': ['Os exercícios principais (primeiros do dia) usam poucas repetições e descanso longo: 2–3 min.','Suba a carga devagar, toda semana, sem perder a técnica.','Faça 2–3 séries de aquecimento leves antes do primeiro exercício.'],
+};
+const COMMON_GUIDE = ['Antes de começar: 5 min de esteira/bike leve + 1 série leve do 1º exercício.','Não sabe a carga? Comece leve no 1º treino e anote. É normal ajustar nas primeiras semanas.','Troque o treino a cada 6–8 semanas para continuar evoluindo.'];
+function pickEx(group, level, n, offset){
+  if(group==='bracos'){ return [ ...pickEx(offset%2?'triceps':'biceps', level, n, offset) ]; }
+  const L = EXDB[group].filter(e => e[3]==='a' || (level==='Iniciante' ? e[3]==='b' : e[3]==='m'));
+  const out = []; for(let k=0; k<n && k<L.length; k++) out.push(L[(offset*n + k) % L.length]);
+  return out;
+}
+function genPlan({goal='Hipertrofia', freq=4, level='Iniciante', style='split'}){
+  freq = Math.min(6, Math.max(2, +freq||3));
+  const cfg = GOALCFG[goal] || GOALCFG['Hipertrofia'], lv = level==='Iniciante' ? 'b' : 'm';
+  const full = style==='full' || freq===2;
+  const nDays = full ? Math.min(freq, 4) : freq;
+  const titles = WEEK[full ? Math.max(2, nDays) : freq];
+  const days = [];
+  for(let d=0; d<nDays; d++){
+    const layout = full ? FULL : SPLITS[freq][d];
+    const variation = full ? d : (freq===6 && d>=3 ? 1 : 0);
+    const items = [];
+    layout.forEach(([g,n]) => pickEx(g, level, n, variation).forEach(e => {
+      const [sets, reps, rest] = cfg[e[2]==='c'?'c':'i'][lv];
+      items.push({ id: uid(), exId: e[1], name: e[0], sets: String(e[1]==='Plank'?3:sets), reps: e[1]==='Plank' ? '30-45s' : String(reps), load:'', rest:String(rest), notes:'' });
+    }));
+    if(items.length){ items[0].notes = 'Aquecimento: 1 série leve de 12–15 reps antes.'; }
+    if(cfg.cardio) items.push({ id:uid(), exId:'Walking_Treadmill', name:'Cardio', sets:'1', reps:'20 min', load:'', rest:'0', notes:'Esteira inclinada, bike ou elíptico. Ritmo em que dá pra falar, mas com esforço.' });
+    let blocks;
+    if(cfg.pairs){ blocks=[]; for(let k=0;k<items.length;k+=2) blocks.push({ id:uid(), items: items.slice(k,k+2) }); }
+    else blocks = items.map(it => ({ id:uid(), items:[it] }));
+    const groups = full ? 'Corpo inteiro' : [...new Set(layout.map(([g])=>g).filter(g=>g!=='abd' && g!=='pant'))].map(g=>GNAME[g]).join(' + ') + (layout.some(([g])=>g==='abd') ? ' + Abdômen' : '');
+    days.push({ id: uid(), title: titles[d] || ('Treino '+'ABCDEF'[d]), subtitle: (full ? 'Full body '+'ABCD'[d]+' · ' : '') + groups, blocks });
+  }
+  const today = new Date(), end = new Date(Date.now()+56*864e5), iso = x => x.toISOString().slice(0,10);
+  return { id: uid(), name: goal + (full ? ' · Full body ' : ' · ') + nDays + 'x', goal, level, start: iso(today), end: iso(end), color: cfg.color, icon: cfg.icon, generated: true,
+           guide: [...GUIDE[goal], ...COMMON_GUIDE], days };
+}
+function dayMinutes(d){ const secs = d.blocks.reduce((a,b)=>a+b.items.reduce((x,it)=>{ const n = it.scheme? it.scheme.length : (+it.sets||3); const r = /min/.test(it.reps) ? (num(it.reps)||20)*60 : n*(40+(+it.rest||60)); return x + (/min/.test(it.reps) ? r : r); },0),0); return Math.round(secs/60 + 6); }
+function genPreview(st){
+  const goal = st.goal || (S.profile&&S.profile.goal) || 'Hipertrofia', freq = +(st.wk || (S.profile&&S.profile.weekly_target) || 4), level = st.lvl || 'Iniciante', style = st.style || 'split';
+  const plan = genPlan({goal, freq, level, style});
+  return { plan, html: '<div class="preview">'+(freq===2 && style==='split' ? '<div class="pvnote">Com 2 treinos por semana, o recomendado é corpo inteiro em cada treino.</div>' : '')+
+    plan.days.map(d => '<div class="pvday"><b>'+esc(d.title.slice(0,3))+'</b><div><div class="pvg">'+esc(d.subtitle)+'</div><div class="pvm">'+d.blocks.reduce((a,b)=>a+b.items.length,0)+' exercícios · ~'+dayMinutes(d)+' min</div></div></div>').join('')+'</div>' };
+}
+function generatorControls(st){
+  const lvl = st.lvl || 'Iniciante', style = st.style || 'split';
+  return '<div class="field"><label>Seu nível</label><div class="chips" style="flex-wrap:wrap">'+[['Iniciante','até 6 meses'],['Intermediário','6 meses a 2 anos']].map(([k,d])=>'<button type="button" class="chip'+(lvl===k?' on':'')+'" data-act="gLvl" data-l="'+k+'">'+k+' <span style="opacity:.7;font-family:var(--mono);font-size:11px;text-transform:none">'+d+'</span></button>').join('')+'</div></div>'+
+    '<div class="field"><label>Formato</label><div class="seg2" style="margin:0"><button type="button" class="'+(style==='split'?'on':'')+'" data-act="gStyle" data-s="split">Por grupos</button><button type="button" class="'+(style==='full'?'on':'')+'" data-act="gStyle" data-s="full">Full body</button></div></div>'+
+    '<p class="lead" style="margin:-4px 0 12px;text-transform:none;letter-spacing:0;font-size:12.5px">'+(style==='split'?'Cada dia foca 2 grupos musculares. Ao longo da semana, você treina o corpo todo. Até ~1h por treino.':'Corpo inteiro em todo treino, 1 exercício por grupo. Ótimo pra quem treina 2–3x por semana ou está começando.')+'</p>';
+}
+V.gen = (st) => {
+  const pv = genPreview(st);
+  return header({title:'Treino recomendado', sub:'Montado pelo seu objetivo e rotina'}) +
+  '<div class="wrap"><div class="card">'+
+  '<div class="field"><label>Objetivo</label><div class="chips" style="flex-wrap:wrap">'+GOALS.map(x=>'<button type="button" class="chip'+((st.goal||(S.profile&&S.profile.goal)||'Hipertrofia')===x?' on':'')+'" data-act="pGoal" data-g="'+x+'">'+x+'</button>').join('')+'</div></div>'+
+  '<div class="field"><label>Treinos por semana</label><div class="chips">'+[2,3,4,5,6].map(n=>'<button type="button" class="chip'+(+(st.wk||(S.profile&&S.profile.weekly_target)||4)===n?' on':'')+'" data-act="pWk" data-n="'+n+'">'+n+'x</button>').join('')+'</div></div>'+
+  generatorControls(st)+pv.html+'</div>'+
+  '<button class="btn pri" data-act="genOk" style="font-size:20px">Adicionar este plano</button></div>' + nav('plans');
+};
+
 // ---------- conta: login, cadastro, perfil ----------
 const GOALS = ['Hipertrofia','Emagrecer','Condicionamento','Força'];
-V.boot = () => '<div class="ph" style="padding-top:40vh;text-align:center"><div class="brand" style="justify-content:center;color:var(--ink)"><i>'+I.logo+'</i><span>Série</span></div></div>';
+V.boot = () => '<div class="splash"><div class="splash-in"><div class="sp-logo"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="9" y="4" width="14" height="24" rx="3"/><path d="M9 11h14M9 21h14M5 13v6M27 13v6M3 15v2M29 15v2"/></svg></div><div class="sp-t"><span>#Vem</span><span>Monstro</span></div><div class="sp-bar"><i></i></div><div class="sp-tag">bora treinar</div></div></div>';
 V.login = (st) => {
   const up = st.mode === 'up', fg = st.mode === 'forgot';
-  return '<div class="auth"><div class="brand big-brand"><i>'+I.logo+'</i><span>Série</span></div>'+
+  return '<div class="auth"><div class="brand big-brand"><i>'+I.logo+'</i><span>#VemMonstro</span></div>'+
   '<h1 class="big" style="margin:28px 0 6px">'+(fg?'Recuperar senha':up?'Criar conta':'Bora treinar')+'</h1><p class="lead" style="margin:0 0 22px">'+(fg?'Te mandamos um link por e-mail':up?'Seu treino, suas cargas, seu histórico':'Entre pra ver seus treinos')+'</p>'+
   '<form class="card" id="authf" style="padding:18px">'+
   (fg?'':'<div class="seg2"><button type="button" class="'+(!up?'on':'')+'" data-act="authMode" data-m="in">Entrar</button><button type="button" class="'+(up?'on':'')+'" data-act="authMode" data-m="up">Criar conta</button></div>')+
@@ -772,9 +900,9 @@ V.login = (st) => {
   '<button class="btn pri" type="submit" '+(st.busy?'disabled':'')+'>'+(st.busy?'Aguarde…':fg?'Enviar link':up?'Criar conta':'Entrar')+'</button>'+
   '</form>'+
   (fg?'<button class="link-toggle" style="margin:4px auto" data-act="authMode" data-m="in">← Voltar para o login</button>':(!up?'<button class="link-toggle" style="margin:4px auto" data-act="authMode" data-m="forgot">Esqueci minha senha</button>':''))+
-  '<div class="sync">Série '+APP_VERSION+'</div></div>';
+  '<div class="sync">#VemMonstro '+APP_VERSION+'</div></div>';
 };
-V.newpass = (st) => '<div class="auth"><div class="brand big-brand"><i>'+I.logo+'</i><span>Série</span></div><h1 class="big" style="margin:28px 0 22px">Nova senha</h1>'+
+V.newpass = (st) => '<div class="auth"><div class="brand big-brand"><i>'+I.logo+'</i><span>#VemMonstro</span></div><h1 class="big" style="margin:28px 0 22px">Nova senha</h1>'+
   '<form class="card" id="newpassf"><div class="field"><label>Nova senha (mín. 6)</label><input id="np" type="password" minlength="6" required autocomplete="new-password"></div>'+
   (st.err?'<div class="note" style="margin:0 0 14px"><b>Ops</b>'+esc(st.err)+'</div>':'')+'<button class="btn pri" type="submit">Salvar senha</button></form></div>';
 function profileForm(pr, st){
@@ -790,12 +918,12 @@ function readProfile(st){
   return { name:n, age: num($('#p-age').value), weight: num($('#p-weight').value), height: num($('#p-height').value), goal: st.goal || pr.goal || 'Hipertrofia', weekly_target: +(st.wk || pr.weekly_target || 4) };
 }
 V.onboard = (st) => {
-  const tpl = st.tpl ?? 'none';
-  return '<div class="auth"><div class="brand big-brand"><i>'+I.logo+'</i><span>Série</span></div>'+
+  const tpl = st.tpl ?? 'rec';
+  return '<div class="auth"><div class="brand big-brand"><i>'+I.logo+'</i><span>#VemMonstro</span></div>'+
   '<h1 class="big" style="margin:28px 0 6px">Quem é você?</h1><p class="lead" style="margin:0 0 22px">Usamos isso pra metas e calorias</p>'+
   '<div class="card">'+profileForm(S.profile, st)+'</div>'+
-  '<div class="card"><div class="h2">Começar com</div>'+
-  [['none','Do zero','Monto meu próprio treino'],['p-hipertrofia','Hipertrofia','5 dias · intermediário'],['p-fullbody','Full body','Iniciante']].map(([k,t,d])=>'<button type="button" class="plan'+(tpl===k?' sel':'')+'" data-act="pTpl" data-t="'+k+'"><span class="av" style="background:'+(tpl===k?'var(--g)':'var(--paper)')+'">'+(tpl===k?I.check:I.dumb)+'</span><div><h3>'+t+'</h3><div class="meta">'+d+'</div></div></button>').join('')+
+  '<div class="card"><div class="h2">Seu treino</div>'+generatorControls(st)+
+  [['rec','Treino recomendado','Montado pro seu objetivo e dias da semana'],['p-hipertrofia','Hipertrofia avançada','Modelo pronto · 5 dias · com pirâmides e drop sets'],['none','Do zero','Já sei montar o meu']].map(([k,t,d])=>'<button type="button" class="plan'+(tpl===k?' sel':'')+'" data-act="pTpl" data-t="'+k+'"><span class="av" style="background:'+(tpl===k?'var(--g)':'var(--paper)')+'">'+(tpl===k?I.check:I.dumb)+'</span><div><h3>'+t+(k==='rec'?' <span class="pill" style="vertical-align:3px">recomendado</span>':'')+'</h3><div class="meta">'+d+'</div></div></button>'+(k==='rec'&&tpl==='rec'?genPreview(st).html:'')).join('')+
   '</div><button class="btn pri" data-act="onboardOk" style="font-size:20px" '+(st.busy?'disabled':'')+'>'+(st.busy?'Salvando…':'Começar')+'</button></div>';
 };
 V.profile = (st) => header({title:'Perfil', sub: user && user.email}) +
@@ -875,10 +1003,13 @@ document.addEventListener('click', e => {
     case 'newPlan': S.editDraft={id:uid(),name:'Novo plano',goal:'Hipertrofia',level:'',start:'',end:'',days:[{id:uid(),title:'Treino A',subtitle:'',blocks:[]}]}; go('editPlan',{isNew:true}); break;
     case 'editPlan': S.editDraft=clone(findPlan(D.plan)); go('editPlan',{plan:D.plan}); break;
     case 'authMode': st.mode = D.m; st.err = st.msg = ''; render(); break;
-    case 'pGoal': st.goal = D.g; keepForm(()=>render()); break;
-    case 'pWk': st.wk = +D.n; keepForm(()=>render()); break;
-    case 'pTpl': st.tpl = D.t; keepForm(()=>render()); break;
-    case 'onboardOk': { const pr = readProfile(st); if(!pr) break; st.busy=true; render(); (async()=>{ try{ await saveProfile(pr); const t = TEMPLATES.find(x=>x.id===st.tpl); if(t && !S.plans.some(x=>x.id===t.id)){ S.plans.push(clone(t)); savePlans(); } S.stack=[{v:'home'}]; render(); toast('Bem-vindo, '+pr.name.split(' ')[0]+'!'); }catch(e){ st.busy=false; render(); } })(); break; }
+    case 'pGoal': st.goal = D.g; keepForm(()=>{ st.keepScroll=true; render(); }); break;
+    case 'pWk': st.wk = +D.n; keepForm(()=>{ st.keepScroll=true; render(); }); break;
+    case 'gLvl': st.lvl = D.l; keepForm(()=>{ st.keepScroll=true; render(); }); break;
+    case 'gStyle': st.style = D.s; keepForm(()=>{ st.keepScroll=true; render(); }); break;
+    case 'genOk': { const pl = genPreview(st).plan; S.plans.push(pl); savePlans(); S.stack=[{v:'home'},{v:'plans'},{v:'plan',plan:pl.id}]; render(); window.scrollTo(0,0); toast('Plano adicionado'); break; }
+    case 'pTpl': st.tpl = D.t; keepForm(()=>{ st.keepScroll=true; render(); }); break;
+    case 'onboardOk': { const pr = readProfile(st); if(!pr) break; st.busy=true; render(); (async()=>{ try{ await saveProfile(pr); const tp = st.tpl ?? 'rec'; if(tp==='rec'){ S.plans.push(genPreview(st).plan); savePlans(); } else { const t = TEMPLATES.find(x=>x.id===tp); if(t && !S.plans.some(x=>x.id===t.id)){ S.plans.push(clone(t)); savePlans(); } } S.stack=[{v:'home'}]; render(); toast('Bem-vindo, '+pr.name.split(' ')[0]+'!'); }catch(e){ st.busy=false; render(); } })(); break; }
     case 'profileOk': { const pr = readProfile(st); if(!pr) break; saveProfile(pr).then(()=>{ toast('Perfil salvo'); render(); }).catch(()=>{}); break; }
     case 'logout': confirmBox('Sair da conta neste celular?', logout, 'Sair', true); break;
     case 'copyLink': { const u = location.origin+location.pathname; (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(()=>toast('Link copiado')).catch(()=>toast(u)); break; }

@@ -1,4 +1,4 @@
-# Série — app de treino
+# #VemMonstro — app de treino
 
 Web app (PWA) de treino: planos por dia, combinados, pirâmides/drop sets, cronômetro de descanso, histórico e progresso. Login e dados por pessoa via Supabase.
 
