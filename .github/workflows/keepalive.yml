@@ -1,0 +1,21 @@
+# Mantém o Supabase (plano grátis) ativo: o projeto pausa após 7 dias sem uso.
+# A cada 2 dias faz uma leitura simples (só leitura, chave pública do app).
+name: keepalive
+on:
+  schedule:
+    - cron: '17 6 */2 * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        env:
+          SB_URL: https://kazfepwgtaxmbyqjxzqi.supabase.co
+          SB_KEY: sb_publishable_GViIpkCEwRIGwy3dE61XsA_PV7nDEQY
+        run: |
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$SB_URL/rest/v1/profiles?select=id&limit=1" -H "apikey: $SB_KEY" -H "Authorization: Bearer $SB_KEY")
+          echo "Supabase HTTP $code"
+          test "$code" -lt 500
