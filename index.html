@@ -462,7 +462,7 @@ function home(){ S.stack=[{v:'home'}]; render(); window.scrollTo(0,0); }
 // ---------- persistence (Supabase, cache local para offline) ----------
 const T0 = Date.now();
 const splashWait = () => new Promise(r => setTimeout(r, Math.max(0, 1500 - (Date.now() - T0))));
-const APP_VERSION = 'v10';
+const APP_VERSION = 'v11';
 const SB_URL = 'https://kazfepwgtaxmbyqjxzqi.supabase.co';
 const SB_KEY = 'sb_publishable_GViIpkCEwRIGwy3dE61XsA_PV7nDEQY';
 const TEMPLATES = [{"id": "p-hipertrofia", "name": "Hipertrofia", "goal": "Hipertrofia", "level": "Intermediário", "start": "2026-08-12", "end": "2026-09-12", "days": [{"id": "h-seg", "title": "Segunda", "subtitle": "Costas e ombro", "blocks": [{"id": "b2", "items": [{"id": "e1", "exId": "V-Bar_Pulldown", "name": "V-Bar Lat Pulldown", "sets": "4", "reps": "10", "load": "40kg", "rest": "60", "notes": "Fazer 1x30 com 30kg pra aquecer"}]}, {"id": "b5", "items": [{"id": "e3", "exId": "Rope_Straight-Arm_Pulldown", "name": "Rope Cable Pulldown", "sets": "3", "reps": "10", "load": "30kg", "rest": "60", "notes": ""}, {"id": "e4", "exId": "Face_Pull", "name": "Face Pull", "sets": "3", "reps": "12", "load": "20kg", "rest": "60", "notes": ""}]}, {"id": "b7", "items": [{"id": "e6", "exId": "Reverse_Grip_Bent-Over_Rows", "name": "Reverse Grip Bent Over Barbell Row", "sets": "3", "reps": "10", "load": "10kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b9", "items": [{"id": "e8", "exId": "Dumbbell_Shoulder_Press", "name": "Seated Neutral Grip Dumbbell Shoulder Press", "sets": "4", "reps": "10", "load": "8kg", "rest": "60", "notes": ""}]}, {"id": "b11", "items": [{"id": "e10", "exId": "Seated_Side_Lateral_Raise", "name": "Seated Dumbbell Side Lateral Raise", "sets": "3", "reps": "10", "load": "6kg", "rest": "60", "notes": ""}]}, {"id": "b13", "items": [{"id": "e12", "exId": "Upright_Cable_Row", "name": "Low Cable High Row with Barbell", "sets": "3", "reps": "10", "load": "", "rest": "60", "notes": "Drop set, fazer 3 séries", "scheme": [{"reps": "10", "load": "35kg"}, {"reps": "10", "load": "30kg"}, {"reps": "10", "load": "25kg"}]}]}, {"id": "b15", "items": [{"id": "e14", "exId": "Sit-Up", "name": "Rower Sit-up", "sets": "4", "reps": "20", "load": "0kg", "rest": "60", "notes": ""}]}]}, {"id": "h-ter", "title": "Terça", "subtitle": "Bíceps e tríceps", "blocks": [{"id": "b18", "items": [{"id": "e16", "exId": "Alternate_Hammer_Curl", "name": "Alternating Isometric Dumbbell Hammer Curl", "sets": "4", "reps": "10", "load": "9kg", "rest": "60", "notes": ""}, {"id": "e17", "exId": "Standing_One-Arm_Dumbbell_Triceps_Extension", "name": "One Arm Overhead Dumbbell Triceps Extension", "sets": "4", "reps": "12", "load": "6kg", "rest": "60", "notes": ""}]}, {"id": "b21", "items": [{"id": "e19", "exId": "Cable_Hammer_Curls_-_Rope_Attachment", "name": "Low Cable Bicep Curl with Rope", "sets": "3", "reps": "10", "load": "20kg", "rest": "60", "notes": ""}, {"id": "e20", "exId": "Triceps_Pushdown", "name": "Triceps Pushdown", "sets": "3", "reps": "10", "load": "", "rest": "60", "notes": "Drop set 3x", "scheme": [{"reps": "10", "load": "35kg"}, {"reps": "10", "load": "30kg"}, {"reps": "10", "load": "20kg"}]}]}, {"id": "b24", "items": [{"id": "e22", "exId": "Reverse_Cable_Curl", "name": "Low Cable Reverse Curl", "sets": "3", "reps": "12", "load": "10kg", "rest": "60", "notes": ""}, {"id": "e23", "exId": "Reverse_Grip_Triceps_Pushdown", "name": "Reverse Grip Triceps Pushdown", "sets": "3", "reps": "10", "load": "30kg", "rest": "60", "notes": ""}]}, {"id": "b26", "items": [{"id": "e25", "exId": "Cable_Rope_Overhead_Triceps_Extension", "name": "Cable Overhead Triceps Extension", "sets": "3", "reps": "10", "load": "20kg", "rest": "60", "notes": ""}]}, {"id": "b28", "items": [{"id": "e27", "exId": "Barbell_Curl", "name": "Barbell Biceps Curl", "sets": "4", "reps": "10", "load": "7kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b30", "items": [{"id": "e29", "exId": "Crunches", "name": "Floor Crunch", "sets": "5", "reps": "20", "load": "0kg", "rest": "60", "notes": ""}]}]}, {"id": "h-qua", "title": "Quarta", "subtitle": "Inferior completo", "blocks": [{"id": "b32", "items": [{"id": "e31", "exId": "Hack_Squat", "name": "Hack Squat", "sets": "4", "reps": "10", "load": "", "rest": "60", "notes": "", "scheme": [{"reps": "15", "load": "15kg cada lado"}, {"reps": "12", "load": "20kg cada lado"}, {"reps": "10", "load": "25kg cada lado"}, {"reps": "8", "load": "30kg cada lado"}]}]}, {"id": "b35", "items": [{"id": "e33", "exId": "Leg_Press", "name": "Feet Wide Leg Press", "sets": "3", "reps": "12", "load": "150kg", "rest": "60", "notes": ""}, {"id": "e34", "exId": "Calf_Press_On_The_Leg_Press_Machine", "name": "Calf on the Leg Press", "sets": "3", "reps": "15", "load": "150kg", "rest": "60", "notes": ""}]}, {"id": "b37", "items": [{"id": "e36", "exId": "Leg_Extensions", "name": "Leg Extension", "sets": "4", "reps": "10", "load": "", "rest": "90", "notes": "Drop set, fazer 4 séries, descansar 90s", "scheme": [{"reps": "15", "load": "30kg"}, {"reps": "12", "load": "40kg"}, {"reps": "10", "load": "50kg"}, {"reps": "8", "load": "60kg"}]}]}, {"id": "b39", "items": [{"id": "e38", "exId": "Thigh_Abductor", "name": "Thigh Abductor", "sets": "4", "reps": "15", "load": "70kg", "rest": "50", "notes": ""}]}, {"id": "b41", "items": [{"id": "e40", "exId": "Seated_Leg_Curl", "name": "Seated Hamstring Curl", "sets": "3", "reps": "falha", "load": "50kg", "rest": "60", "notes": "Até a falha"}]}]}, {"id": "h-qui", "title": "Quinta", "subtitle": "Peito e ombro", "blocks": [{"id": "b43", "items": [{"id": "e42", "exId": "Barbell_Incline_Bench_Press_-_Medium_Grip", "name": "Incline Bench Press", "sets": "3", "reps": "10", "load": "7,5kg", "rest": "60", "notes": "Fazer 1x20 com 10kg para aquecer"}]}, {"id": "b45", "items": [{"id": "e44", "exId": "Incline_Dumbbell_Flyes", "name": "Incline Fly", "sets": "3", "reps": "12", "load": "8kg", "rest": "60", "notes": ""}]}, {"id": "b47", "items": [{"id": "e46", "exId": "Barbell_Bench_Press_-_Medium_Grip", "name": "Bench Press", "sets": "4", "reps": "10", "load": "18kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b49", "items": [{"id": "e48", "exId": "Cable_Crossover", "name": "High Cable Crossover", "sets": "3", "reps": "10", "load": "20kg", "rest": "60", "notes": ""}]}, {"id": "b51", "items": [{"id": "e50", "exId": "Side_Lateral_Raise", "name": "Dumbbell Side Lateral Raise", "sets": "4", "reps": "12", "load": "8kg", "rest": "60", "notes": ""}]}, {"id": "b53", "items": [{"id": "e52", "exId": "Arnold_Dumbbell_Press", "name": "Seated Arnold Press", "sets": "4", "reps": "10", "load": "10kg", "rest": "60", "notes": ""}]}, {"id": "b55", "items": [{"id": "e54", "exId": "Front_Raise_And_Pullover", "name": "Barbell Reverse Front Raise", "sets": "3", "reps": "10", "load": "5kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b57", "items": [{"id": "e56", "exId": "Ab_Roller", "name": "Ab Wheel Rollout", "sets": "4", "reps": "15", "load": "0kg", "rest": "60", "notes": ""}]}]}, {"id": "h-sex", "title": "Sexta", "subtitle": "Bíceps e tríceps", "blocks": [{"id": "b60", "items": [{"id": "e58", "exId": "Barbell_Curl", "name": "EZ-Bar Biceps Curl 21s", "sets": "4", "reps": "21", "load": "7kg cada lado", "rest": "60", "notes": "21s: 7 reps embaixo, 7 em cima, 7 completas"}, {"id": "e59", "exId": "EZ-Bar_Skullcrusher", "name": "EZ-Bar Skull Crusher", "sets": "4", "reps": "12", "load": "7kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b63", "items": [{"id": "e61", "exId": "Cable_Rope_Overhead_Triceps_Extension", "name": "Cable Rope Overhead Triceps Extension", "sets": "3", "reps": "10", "load": "45kg", "rest": "60", "notes": ""}, {"id": "e62", "exId": "Cable_Hammer_Curls_-_Rope_Attachment", "name": "Low Cable Bicep Curl with Rope", "sets": "3", "reps": "10", "load": "", "rest": "60", "notes": "Drop set 3x", "scheme": [{"reps": "10", "load": "40kg"}, {"reps": "10", "load": "30kg"}, {"reps": "10", "load": "20kg"}]}]}, {"id": "b66", "items": [{"id": "e64", "exId": "Dumbbell_Bicep_Curl", "name": "Isometric Dumbbell Biceps Curl", "sets": "3", "reps": "12", "load": "10kg", "rest": "60", "notes": ""}, {"id": "e65", "exId": "Triceps_Pushdown_-_Rope_Attachment", "name": "Triceps Pushdown with Rope", "sets": "3", "reps": "10", "load": "35kg", "rest": "60", "notes": ""}]}, {"id": "b68", "items": [{"id": "e67", "exId": "Reverse_Grip_Triceps_Pushdown", "name": "Reverse Grip Triceps Pushdown", "sets": "3", "reps": "10", "load": "50kg", "rest": "60", "notes": ""}]}, {"id": "b70", "items": [{"id": "e69", "exId": "Preacher_Curl", "name": "EZ-Bar Scott Curl", "sets": "4", "reps": "10", "load": "12kg cada lado", "rest": "60", "notes": ""}]}, {"id": "b72", "items": [{"id": "e71", "exId": "Air_Bike", "name": "Bicycle Crunch", "sets": "5", "reps": "15", "load": "0kg", "rest": "60", "notes": ""}]}]}]}, {"id": "p-fullbody", "name": "Full body", "goal": "Hipertrofia", "level": "Iniciante", "start": "2026-08-16", "end": "2026-09-18", "days": [{"id": "f-1", "title": "Treino 1", "subtitle": "Segunda-feira", "blocks": [{"id": "b74", "items": [{"id": "e73", "exId": "Hammer_Curls", "name": "Dumbbell Hammer Curl", "sets": "3", "reps": "10", "load": "8kg", "rest": "60", "notes": "Mesma carga e reps em todas as séries"}]}, {"id": "b76", "items": [{"id": "e75", "exId": "Close-Grip_Front_Lat_Pulldown", "name": "Close-Grip Front Lat Pulldown", "sets": "3", "reps": "10", "load": "40kg", "rest": "60", "notes": ""}]}, {"id": "b78", "items": [{"id": "e77", "exId": "Barbell_Bench_Press_-_Medium_Grip", "name": "Bench Press", "sets": "3", "reps": "12", "load": "12kg cada lado", "rest": "60", "notes": "Mesma carga e reps em todas as séries"}]}, {"id": "b80", "items": [{"id": "e79", "exId": "Preacher_Curl", "name": "EZ-Bar Scott Curl", "sets": "3", "reps": "10", "load": "8kg cada lado", "rest": "60", "notes": "Mesma carga e reps em todas as séries"}]}, {"id": "b82", "items": [{"id": "e81", "exId": "Hack_Squat", "name": "Hack Squat", "sets": "4", "reps": "12", "load": "60kg cada lado", "rest": "60", "notes": ""}]}]}, {"id": "f-2", "title": "Treino 2", "subtitle": "Quarta-feira", "blocks": []}]}];
@@ -476,7 +476,15 @@ async function flushPending(){
   for(const id of [...p.deletes]){ const { error } = await sb.from('sessions').delete().eq('id', id); if(!error){ p.deletes=p.deletes.filter(x=>x!==id); changed=true; } }
   if(changed){ pend.set(p); S.syncNote = (p.plans||p.sessions.length||p.deletes.length) ? 'Alterações pendentes — vão sincronizar quando voltar a internet' : ''; }
 }
+function noCombo(plans){
+  (plans||[]).forEach(p => (p.days||[]).forEach(d => {
+    const out=[]; (d.blocks||[]).forEach(b => b.items.forEach((it,k) => { if(!+it.rest) it.rest = /cardio|esteira|bike|el[ií]ptico/i.test(it.name) ? '0' : '60'; out.push(k===0 ? {id:b.id, items:[it]} : {id:uid(), items:[it]}); }));
+    d.blocks = out;
+  }));
+  return plans;
+}
 function savePlans(){
+  noCombo(S.plans);
   ls.set('serie.plans', S.plans);
   const p = pend.get(); p.plans = true; pend.set(p);
   clearTimeout(saveTimer); saveTimer = setTimeout(flushPending, 500);
@@ -504,7 +512,7 @@ async function loadAll(){
     if(pr.error || pl.error || hs.error) throw (pr.error || pl.error || hs.error);
     const p = pend.get();
     S.profile = pr.data || null;
-    if(!p.plans) S.plans = (pl.data && pl.data.plans) || [];
+    if(!p.plans) S.plans = noCombo((pl.data && pl.data.plans) || []);
     const remote = hs.data.map(r => r.data);
     S.history = [...p.sessions.filter(x=>!remote.some(r=>r.id===x.id)), ...remote].filter(h=>!p.deletes.includes(h.id)).sort((a,b)=>b.date.localeCompare(a.date));
     ls.set('serie.profile', S.profile); ls.set('serie.plans', S.plans); ls.set('serie.history', S.history);
@@ -512,7 +520,7 @@ async function loadAll(){
     flushPending();
   }catch(e){
     console.warn(e);
-    S.profile = ls.get('serie.profile'); S.plans = ls.get('serie.plans') || []; S.history = ls.get('serie.history') || [];
+    S.profile = ls.get('serie.profile'); S.plans = noCombo(ls.get('serie.plans') || []); S.history = ls.get('serie.history') || [];
     S.syncNote = 'Sem internet — usando os dados salvos neste celular';
   }
   await splashWait();
@@ -524,7 +532,7 @@ async function loadAll(){
 async function initData(){
   S.stack = [{v:'boot'}]; render();
   if(!window.supabase){ // sem internet na primeira abertura
-    S.profile = ls.get('serie.profile'); S.plans = ls.get('serie.plans')||[]; S.history = ls.get('serie.history')||[];
+    S.profile = ls.get('serie.profile'); S.plans = noCombo(ls.get('serie.plans')||[]); S.history = ls.get('serie.history')||[];
     if(S.profile){ S.loaded=true; S.syncNote='Sem internet — usando os dados salvos neste celular'; S.stack=[{v:'home'}]; } else S.stack=[{v:'login'}];
     render(); return;
   }
@@ -534,7 +542,7 @@ async function initData(){
   });
   const { data } = await sb.auth.getSession();
   if(!data.session){
-    if(ls.get('serie.profile') && !navigator.onLine){ S.profile = ls.get('serie.profile'); S.plans = ls.get('serie.plans')||[]; S.history = ls.get('serie.history')||[]; S.loaded=true; S.stack=[{v:'home'}]; render(); return; }
+    if(ls.get('serie.profile') && !navigator.onLine){ S.profile = ls.get('serie.profile'); S.plans = noCombo(ls.get('serie.plans')||[]); S.history = ls.get('serie.history')||[]; S.loaded=true; S.stack=[{v:'home'}]; render(); return; }
     await splashWait(); S.stack = [{v:'login'}]; render(); return;
   }
   user = data.session.user;
@@ -806,6 +814,7 @@ function lvSavePlan(){
 }
 V.live = () => {
   const s = S.session; if(!s) return V.home();
+  if(s.blocks.some(x=>x.items.length>1)){ const ni=s.blocks.slice(0,s.idx||0).reduce((a,x)=>a+x.items.length,0); s.blocks=s.blocks.flatMap(x=>x.items.map(it=>({items:[it]}))); s.idx=ni; ls.set('serie.session', s); }
   s.idx = Math.max(0, Math.min(s.idx||0, s.blocks.length-1));
   const b = s.blocks[s.idx], bi = s.idx, combo = b.items.length>1;
   const total = s.blocks.reduce((a,x)=>a+x.items.reduce((y,it)=>y+it.sets.length,0),0);
@@ -1026,13 +1035,13 @@ const PROGRAMS = [
          ['Glúteos B','Glúteo + Posterior',[['Ponte de glúteo','Barbell_Glute_Bridge',4,'10-12',90],['Stiff com halteres','Stiff-Legged_Dumbbell_Deadlift',3,'10',90],['Mesa flexora','Lying_Leg_Curls',3,'12',60],['Cadeira adutora','Thigh_Adductor',3,'15',45],['Cadeira abdutora','Thigh_Abductor',3,'15-20',45,true]]]] },
  { id:'g-queima', name:'Queima total', tag:'Circuito + cardio · 3x', level:'Iniciante', goal:'Emagrecer', min:45,
    desc:'Circuitos de corpo inteiro com pouco descanso e cardio no final. Gasta muita energia e preserva músculo.',
-   who:'Quem quer perder gordura e ganhar condicionamento', tips:['Exercícios em pares: faça um, depois o outro, e só então descanse.','O cardio no final é parte do treino — não pule.','Alimentação manda no emagrecimento; o treino segura o músculo.'],
+   who:'Quem quer perder gordura e ganhar condicionamento', tips:['Descanso curto (30–45 s) mantém o ritmo alto.','O cardio no final é parte do treino — não pule.','Alimentação manda no emagrecimento; o treino segura o músculo.'],
    days:[['Circuito A','Corpo inteiro',[['Agachamento goblet','Goblet_Squat',3,'15',30],['Flexão de braço','Pushups',3,'10-15',45,true],['Remada unilateral com halter','One-Arm_Dumbbell_Row',3,'12',30],['Afundo com halteres','Dumbbell_Lunges',3,'10 cada perna',45,true],['Abdominal bicicleta','Air_Bike',3,'20',30],['Cardio','Walking_Treadmill',1,'20 min',0]]],
          ['Circuito B','Corpo inteiro',[['Leg press 45°','Leg_Press',3,'15',30],['Puxada frontal','Wide-Grip_Lat_Pulldown',3,'12-15',45,true],['Desenvolvimento com halteres','Dumbbell_Shoulder_Press',3,'12',30],['Stiff com halteres','Stiff-Legged_Dumbbell_Deadlift',3,'12',45,true],['Prancha','Plank',3,'40s',30],['Cardio','Bicycling_Stationary',1,'20 min',0]]],
          ['Circuito C','Corpo inteiro',[['Kettlebell swing','One-Arm_Kettlebell_Swings',3,'15',30],['Supino reto com halteres','Dumbbell_Bench_Press',3,'12',45,true],['Remada baixa na polia','Seated_Cable_Rows',3,'12-15',30],['Agachamento goblet','Goblet_Squat',3,'15',45,true],['Elevação de pernas','Flat_Bench_Lying_Leg_Raise',3,'15',30],['Cardio','Elliptical_Trainer',1,'20 min',0]]]] },
- { id:'g-express', name:'Express 30 min', tag:'Combinados · 3x', level:'Iniciante', goal:'Condicionamento', min:30,
-   desc:'Sem tempo? Todo exercício em par (bi-set): você trabalha um grupo enquanto o outro descansa. Corpo todo em 30 minutos.',
-   who:'Quem tem pouco tempo', tips:['Faça A e B em sequência e descanse só no final da rodada.','Escolha cargas que você consiga manter sem pausar no meio.','3x por semana já dá resultado.'],
+ { id:'g-express', name:'Express 30 min', tag:'Rápido · 3x', level:'Iniciante', goal:'Condicionamento', min:30,
+   desc:'Sem tempo? Poucos exercícios, básicos e direto ao ponto. Corpo todo em cerca de 30 minutos.',
+   who:'Quem tem pouco tempo', tips:['Descanso curto: 45–60 s entre as séries.','Escolha cargas que você consiga manter sem pausar no meio.','3x por semana já dá resultado.'],
    days:[['Express A','Corpo inteiro',[['Leg press 45°','Leg_Press',3,'12',0],['Puxada frontal','Wide-Grip_Lat_Pulldown',3,'12',75,true],['Supino máquina','Machine_Bench_Press',3,'12',0],['Cadeira flexora','Seated_Leg_Curl',3,'12',75,true],['Elevação lateral','Side_Lateral_Raise',3,'15',0],['Abdominal supra','Crunches',3,'20',60,true]]],
          ['Express B','Corpo inteiro',[['Agachamento goblet','Goblet_Squat',3,'12',0],['Remada baixa na polia','Seated_Cable_Rows',3,'12',75,true],['Desenvolvimento com halteres','Dumbbell_Shoulder_Press',3,'12',0],['Stiff com halteres','Stiff-Legged_Dumbbell_Deadlift',3,'12',75,true],['Rosca alternada','Dumbbell_Alternate_Bicep_Curl',3,'12',0],['Tríceps corda','Triceps_Pushdown_-_Rope_Attachment',3,'12',60,true]]]] },
  { id:'g-casa', name:'Só halteres', tag:'Casa ou hotel · 3x', level:'Iniciante', goal:'Hipertrofia', min:40,
@@ -1047,7 +1056,7 @@ function programToPlan(g){
     const blocks = [];
     list.forEach(([name, exId, sets, reps, rest, combine]) => {
       const it = { id: uid(), exId, name, sets: String(sets), reps: String(reps), load:'', rest: String(rest), notes:'' };
-      if(combine && blocks.length) blocks[blocks.length-1].items.push(it); else blocks.push({ id: uid(), items:[it] });
+      if(!+it.rest && !/cardio/i.test(name)) it.rest='60'; blocks.push({ id: uid(), items:[it] });
     });
     plan.days.push({ id: uid(), title: t, subtitle: f, blocks });
   });
@@ -1121,7 +1130,7 @@ V.editDay = (st) => {
   const d = S.editDraft;
   const rows = [];
   d.blocks.forEach((b,bi)=> b.items.forEach((it,ii)=>{
-    rows.push((bi>0 && ii===0 ? '<button class="link-toggle" data-act="linkPrev" data-b="'+bi+'">'+I.link+'Combinar com o anterior</button>' : '')+
+    rows.push(
       '<div class="edit-ex'+(ii>0?' linked':'')+'" data-act="editItem" data-b="'+bi+'" data-i="'+ii+'"><span class="thumb sm">'+animHTML(it.exId)+'</span><div style="flex:1;min-width:0"><div class="nm">'+(b.items.length>1?'<span class="pill" style="margin-right:6px">'+'ABCDEF'[ii]+'</span>':'')+esc(it.name)+'</div><div class="dt">'+(it.scheme&&it.scheme.length ? it.scheme.map(z=>esc(z.reps)+'×'+esc(num(z.load)??'')).join(' / ') : esc(it.sets)+'x'+esc(it.reps)+' · '+esc(it.load||'—'))+' · '+esc(it.rest)+'s</div></div>'+
       '<div class="mini"><button data-act="itemUp" data-b="'+bi+'" data-i="'+ii+'">'+I.up+'</button><button data-act="itemDown" data-b="'+bi+'" data-i="'+ii+'">'+I.down+'</button></div></div>'+
       (ii>0 ? '<button class="link-toggle" style="color:var(--mute)" data-act="unlink" data-b="'+bi+'" data-i="'+ii+'">Separar do combinado</button>' : ''));
@@ -1197,7 +1206,7 @@ const GOALCFG = {
 const GUIDE = {
   'Hipertrofia': ['Escolha uma carga que deixe 1–2 repetições "na reserva" na última série.','Quando fizer o topo das repetições em todas as séries, suba a carga (2–5%) no treino seguinte.','Controle a descida (2–3 s). Técnica antes de carga.'],
   'Emagrecer': ['O que mais emagrece é a alimentação; o treino preserva músculo enquanto você perde gordura.','Descansos curtos e o cardio no final mantêm o gasto alto.','Tente aumentar um pouco carga ou reps a cada semana.'],
-  'Condicionamento': ['Os exercícios vêm em pares (combinados): faça um, depois o outro, e só então descanse.','Ritmo constante, respiração controlada. Pode sentir o coração acelerar — é o objetivo.','Quando ficar fácil, reduza o descanso antes de subir a carga.'],
+  'Condicionamento': ['Descanso curto entre as séries mantém o coração acelerado.','Ritmo constante, respiração controlada. Pode sentir o coração acelerar — é o objetivo.','Quando ficar fácil, reduza o descanso antes de subir a carga.'],
   'Força': ['Os exercícios principais (primeiros do dia) usam poucas repetições e descanso longo: 2–3 min.','Suba a carga devagar, toda semana, sem perder a técnica.','Faça 2–3 séries de aquecimento leves antes do primeiro exercício.'],
 };
 const COMMON_GUIDE = ['Antes de começar: 5 min de esteira/bike leve + 1 série leve do 1º exercício.','Não sabe a carga? Comece leve no 1º treino e anote. É normal ajustar nas primeiras semanas.','Troque o treino a cada 6–8 semanas para continuar evoluindo.'];
@@ -1296,7 +1305,7 @@ const AI_FORMAT = `{
       "foco": "Peito + Tríceps",
       "exercicios": [
         { "nome": "Supino reto com barra", "en": "Barbell Bench Press", "series": 4, "reps": "8-10", "carga": "40kg", "descanso": 90, "obs": "" },
-        { "nome": "Crucifixo máquina", "en": "Pec Deck Fly", "series": 3, "reps": "12", "carga": "", "descanso": 60, "obs": "", "combinar_com_anterior": true },
+        { "nome": "Crucifixo máquina", "en": "Pec Deck Fly", "series": 3, "reps": "12", "carga": "", "descanso": 60, "obs": "" },
         { "nome": "Cadeira extensora", "en": "Leg Extension", "descanso": 90, "obs": "drop set", "piramide": [ { "reps": "15", "carga": "30kg" }, { "reps": "12", "carga": "40kg" } ] }
       ]
     }
@@ -1313,14 +1322,14 @@ ${AI_FORMAT}
 Regras:
 - "nome" em português, como se fala na academia; "en" é o nome mais comum em inglês (ajuda o app a achar o vídeo).
 - "reps" é texto ("10", "8-12", "até a falha"); "descanso" em segundos; "carga" texto ("40kg", "12kg cada lado") ou "" se não souber.
-- Exercícios combinados (bi-set/super-série): marque o segundo com "combinar_com_anterior": true.
+- Não use exercícios combinados (bi-set/super-série): um exercício de cada vez.
 - Pirâmide ou drop set: use "piramide" com uma linha por série, em vez de "series"/"reps"/"carga".
 - Treinos de até ~1h, ordem: multiarticulares primeiro.`;
 function planToAI(p){
   return { id: p.id, plano: p.name, objetivo: p.goal||'', nivel: p.level||'', dias: p.days.map(d => ({ dia: d.title, foco: d.subtitle||'', exercicios: d.blocks.flatMap(b => b.items.map((it,k) => {
     const lib = it.exId && LIBMAP[it.exId]; const o = { nome: it.name, en: lib ? lib.name : '' };
     if(it.scheme && it.scheme.length) o.piramide = it.scheme.map(z=>({reps:String(z.reps), carga:z.load||''})); else { o.series = +it.sets||3; o.reps = String(it.reps||''); o.carga = it.load||''; }
-    o.descanso = +it.rest||60; o.obs = it.notes||''; if(k>0) o.combinar_com_anterior = true; return o; })) })) };
+    o.descanso = +it.rest||60; o.obs = it.notes||''; return o; })) })) };
 }
 function exportText(p){ return AI_PROMPT + '\n\nEste é o meu treino atual. Ajuste conforme eu pedir e devolva no mesmo formato, mantendo o "id":\n\n```json\n' + JSON.stringify(planToAI(p), null, 2) + '\n```'; }
 function parseAI(txt){
@@ -1337,7 +1346,7 @@ function parseAI(txt){
       total++; const exId = matchExercise(e.nome||e.name, e.en); if(!exId) unmatched++;
       const it = { id: uid(), exId, name: e.nome || e.name || 'Exercício', sets: String(e.series ?? e.sets ?? 3), reps: String(e.reps ?? '10'), load: String(e.carga ?? e.load ?? ''), rest: String(e.descanso ?? e.rest ?? 60), notes: e.obs || e.notes || '' };
       const pir = e.piramide || e.pyramid; if(Array.isArray(pir) && pir.length){ it.scheme = pir.map(z=>({reps:String(z.reps??''), load:String(z.carga??z.load??'')})); it.sets = String(it.scheme.length); }
-      if((e.combinar_com_anterior || e.combine_with_previous) && blocks.length) blocks[blocks.length-1].items.push(it); else blocks.push({ id: uid(), items:[it] });
+      blocks.push({ id: uid(), items:[it] });
     });
     plan.days.push({ id: uid(), title: d.dia || d.day || ('Treino '+'ABCDEFG'[di]), subtitle: d.foco || d.focus || '', blocks });
   });
